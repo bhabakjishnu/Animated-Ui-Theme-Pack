@@ -1,0 +1,258 @@
+/* ==========================================================================
+   KEYFRAME ANIMATIONS & 2D TRANSFORMS
+   Animated UI Theme Pack - Motion System
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   Reusable Keyframe Definitions
+   ------------------------------------------------------------------------- */
+
+/* 1. Fade In */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 2. Slide Up */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. Slide In (from Left) */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 4. Pulse */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Ping Ring Indicator */
+@keyframes ping {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* 5. Float (Subtle Levitation) */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* 6. Shimmer (Skeleton / Surface Gleam) */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* 7. Spin */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 8. Bounce */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-14px);
+  }
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+/* 9. Gradient Flow */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 10. Wave Stagger (for 3-dot pulse) */
+@keyframes wave-dot {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* 11. Indeterminate Progress Bar */
+@keyframes indeterminate-bar {
+  0% {
+    left: -35%;
+    width: 35%;
+  }
+  60% {
+    left: 100%;
+    width: 60%;
+  }
+  100% {
+    left: 100%;
+    width: 60%;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Reusable Animation Utility Classes
+   ------------------------------------------------------------------------- */
+.anim-fade-in {
+  animation: fade-in var(--transition-slow) var(--ease-standard) forwards;
+}
+
+.anim-slide-up {
+  animation: slide-up var(--transition-slow) var(--ease-standard) forwards;
+}
+
+.anim-slide-in {
+  animation: slide-in var(--transition-slow) var(--ease-standard) forwards;
+}
+
+.anim-pulse {
+  animation: pulse 2s var(--ease-in-out) infinite;
+}
+
+.anim-float {
+  animation: float 4s var(--ease-in-out) infinite;
+}
+
+.anim-spin {
+  animation: spin 1s linear infinite;
+}
+
+.anim-bounce {
+  animation: bounce 2s var(--ease-standard) infinite;
+}
+
+/* Stagger Delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* -------------------------------------------------------------------------
+   2D Transform Classes & Interactive Playground Triggers
+   ------------------------------------------------------------------------- */
+
+/* Translate X */
+.demo-translate-x {
+  transition: transform var(--transition-normal) var(--ease-standard);
+  will-change: transform;
+}
+.demo-translate-x:hover,
+.demo-translate-x:focus-within {
+  transform: translateX(20px);
+}
+
+/* Translate Y */
+.demo-translate-y {
+  transition: transform var(--transition-normal) var(--ease-standard);
+  will-change: transform;
+}
+.demo-translate-y:hover,
+.demo-translate-y:focus-within {
+  transform: translateY(-16px);
+}
+
+/* Combined Translate */
+.demo-translate-both {
+  transition: transform var(--transition-normal) var(--ease-standard);
+  will-change: transform;
+}
+.demo-translate-both:hover,
+.demo-translate-both:focus-within {
+  transform: translate(16px, -12px);
+}
+
+/* Scale */
+.demo-scale {
+  transition: transform var(--transition-normal) var(--ease-spring);
+  will-change: transform;
+}
+.demo-scale:hover,
+.demo-scale:focus-within {
+  transform: scale(1.15);
+}
+
+/* Rotate */
+.demo-rotate {
+  transition: transform var(--transition-slow) var(--ease-spring);
+  will-change: transform;
+}
+.demo-rotate:hover,
+.demo-rotate:focus-within {
+  transform: rotate(20deg);
+}
+
+/* Skew */
+.demo-skew {
+  transition: transform var(--transition-normal) var(--ease-standard);
+  will-change: transform;
+}
+.demo-skew:hover,
+.demo-skew:focus-within {
+  transform: skew(-10deg, 4deg);
+}

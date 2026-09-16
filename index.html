@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Animated UI Theme Pack — A professional developer showcase of reusable CSS custom properties, keyframe animations, UI transitions, and 2D transforms built with pure HTML5 and CSS3.">
+  <meta name="theme-color" content="#090d16">
+  <title>Animated UI Theme Pack — Modern CSS3 Motion & Design Tokens</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <!-- Modular Design System Stylesheets (Loaded in architectural order) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" id="top">
+    <div class="container site-header__container">
+      <a href="#top" class="nav-brand" aria-label="Animated UI Theme Pack Home">
+        <img src="assets/images/logo.svg" alt="Animated UI Theme Pack Logo" class="nav-brand__logo" width="32" height="32">
+        <span class="nav-brand__title">
+          ThemePack <span class="nav-brand__badge">v1.0</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary Showcase Navigation">
+        <a href="#tokens" class="nav-link">Tokens</a>
+        <a href="#buttons" class="nav-link">Buttons</a>
+        <a href="#cards" class="nav-link">Cards</a>
+        <a href="#transforms" class="nav-link">2D Transforms</a>
+        <a href="#keyframes" class="nav-link">Keyframes</a>
+        <a href="#components" class="nav-link">Components</a>
+        <a href="#themes" class="nav-link">Theme Studio</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="status-indicator-nav" title="All design tokens and animation systems operational">
+          <span class="status-dot-nav" aria-hidden="true"></span>
+          <span>System Online</span>
+        </div>
+        <a href="https://github.com" class="btn btn--secondary btn--icon-only" aria-label="View on GitHub" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================
+         2. HERO SECTION
+         ======================================================================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero-badge" role="status">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>Modern CSS3 Motion Architecture & Tokens</span>
+          </div>
+
+          <h1 class="hero-title" id="hero-title">
+            Dynamic Motion Driven by <span class="text-gradient">CSS Custom Properties</span>
+          </h1>
+
+          <p class="hero-description">
+            A production-ready UI theme pack engineered purely with HTML5 and CSS3. Experience centralized variable tokens, performant 2D transformations, reusable keyframe animations, and cohesive component states with zero runtime dependencies.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#tokens" class="btn btn--primary">
+              <span>Explore Design Tokens</span>
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#keyframes" class="btn btn--secondary">
+              <span>Keyframe Gallery</span>
+            </a>
+            <a href="#themes" class="btn btn--outline">
+              <span>Theme Studio</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. DESIGN TOKENS SHOWCASE
+         ======================================================================== -->
+    <section class="section" id="tokens" aria-labelledby="tokens-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Token Architecture</span>
+          <h2 class="section-title" id="tokens-title">Centralized Design Tokens</h2>
+          <p class="section-description">
+            All visual attributes are parameterized into reusable <code>var(--token)</code> custom properties. Updating tokens cascades instantly across backgrounds, typography, elevations, and motion curves.
+          </p>
+        </header>
+
+        <div class="token-grid">
+          <!-- Token Card: Colors -->
+          <article class="token-showcase-card">
+            <div class="token-showcase-card__title">
+              <h3>Color Tokens</h3>
+              <code>--color-*</code>
+            </div>
+            <div class="swatch-group">
+              <div class="swatch-item">
+                <div class="swatch-box" style="background-color: var(--color-primary);" aria-hidden="true"></div>
+                <div class="swatch-meta">
+                  <span class="swatch-name">--color-primary</span>
+                  <span class="swatch-val">#6366f1</span>
+                </div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-box" style="background-color: var(--color-secondary);" aria-hidden="true"></div>
+                <div class="swatch-meta">
+                  <span class="swatch-name">--color-secondary</span>
+                  <span class="swatch-val">#06b6d4</span>
+                </div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-box" style="background-color: var(--color-surface-card);" aria-hidden="true"></div>
+                <div class="swatch-meta">
+                  <span class="swatch-name">--color-surface-card</span>
+                  <span class="swatch-val">#131c31</span>
+                </div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-box" style="background-color: var(--color-border);" aria-hidden="true"></div>
+                <div class="swatch-meta">
+                  <span class="swatch-name">--color-border</span>
+                  <span class="swatch-val">#1e293b</span>
+                </div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-box" style="background-color: var(--color-success);" aria-hidden="true"></div>
+                <div class="swatch-meta">
+                  <span class="swatch-name">--color-success</span>
+                  <span class="swatch-val">#10b981</span>
+                </div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-box" style="background-color: var(--color-danger);" aria-hidden="true"></div>
+                <div class="swatch-meta">
+                  <span class="swatch-name">--color-danger</span>
+                  <span class="swatch-val">#f43f5e</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Token Card: Spacing -->
+          <article class="token-showcase-card">
+            <div class="token-showcase-card__title">
+              <h3>Spacing Scale</h3>
+              <code>--space-*</code>
+            </div>
+            <div class="spacing-ruler-group">
+              <div class="spacing-ruler-row">
+                <span class="spacing-ruler-name">--space-xs</span>
+                <div class="spacing-ruler-bar-container">
+                  <div class="spacing-ruler-bar" style="width: 15%;"></div>
+                </div>
+                <span class="spacing-ruler-val">8px</span>
+              </div>
+              <div class="spacing-ruler-row">
+                <span class="spacing-ruler-name">--space-sm</span>
+                <div class="spacing-ruler-bar-container">
+                  <div class="spacing-ruler-bar" style="width: 25%;"></div>
+                </div>
+                <span class="spacing-ruler-val">12px</span>
+              </div>
+              <div class="spacing-ruler-row">
+                <span class="spacing-ruler-name">--space-md</span>
+                <div class="spacing-ruler-bar-container">
+                  <div class="spacing-ruler-bar" style="width: 45%;"></div>
+                </div>
+                <span class="spacing-ruler-val">16px</span>
+              </div>
+              <div class="spacing-ruler-row">
+                <span class="spacing-ruler-name">--space-lg</span>
+                <div class="spacing-ruler-bar-container">
+                  <div class="spacing-ruler-bar" style="width: 70%;"></div>
+                </div>
+                <span class="spacing-ruler-val">24px</span>
+              </div>
+              <div class="spacing-ruler-row">
+                <span class="spacing-ruler-name">--space-xl</span>
+                <div class="spacing-ruler-bar-container">
+                  <div class="spacing-ruler-bar" style="width: 100%;"></div>
+                </div>
+                <span class="spacing-ruler-val">32px</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Token Card: Border Radius -->
+          <article class="token-showcase-card">
+            <div class="token-showcase-card__title">
+              <h3>Corner Radii</h3>
+              <code>--radius-*</code>
+            </div>
+            <div class="radius-showcase-group">
+              <div class="radius-box" style="border-radius: var(--radius-sm);">
+                <span class="radius-label">--radius-sm</span>
+                <span class="radius-label">6px</span>
+              </div>
+              <div class="radius-box" style="border-radius: var(--radius-md);">
+                <span class="radius-label">--radius-md</span>
+                <span class="radius-label">10px</span>
+              </div>
+              <div class="radius-box" style="border-radius: var(--radius-lg);">
+                <span class="radius-label">--radius-lg</span>
+                <span class="radius-label">16px</span>
+              </div>
+              <div class="radius-box" style="border-radius: var(--radius-pill);">
+                <span class="radius-label">--radius-pill</span>
+                <span class="radius-label">9999px</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Token Card: Elevation & Shadows -->
+          <article class="token-showcase-card">
+            <div class="token-showcase-card__title">
+              <h3>Shadow Elevations</h3>
+              <code>--shadow-*</code>
+            </div>
+            <div class="shadow-showcase-group">
+              <div class="shadow-box shadow-box--sm">
+                <span class="swatch-name">--shadow-sm</span>
+                <span class="swatch-val">Subtle 1px</span>
+              </div>
+              <div class="shadow-box shadow-box--md">
+                <span class="swatch-name">--shadow-md</span>
+                <span class="swatch-val">Card Tier</span>
+              </div>
+              <div class="shadow-box shadow-box--lg">
+                <span class="swatch-name">--shadow-lg</span>
+                <span class="swatch-val">Float Tier</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Token Card: Motion & Transitions -->
+          <article class="token-showcase-card">
+            <div class="token-showcase-card__title">
+              <h3>Transition Timing</h3>
+              <code>--transition-*</code>
+            </div>
+            <div class="motion-demo-group">
+              <div class="motion-row motion-row--fast" title="Hover to test 150ms transition">
+                <span class="motion-name">--transition-fast</span>
+                <div class="motion-track"><div class="motion-puck"></div></div>
+                <span class="swatch-val">150ms</span>
+              </div>
+              <div class="motion-row" title="Hover to test 250ms transition">
+                <span class="motion-name">--transition-normal</span>
+                <div class="motion-track"><div class="motion-puck"></div></div>
+                <span class="swatch-val">250ms</span>
+              </div>
+              <div class="motion-row motion-row--slow" title="Hover to test 400ms transition">
+                <span class="motion-name">--transition-slow</span>
+                <div class="motion-track"><div class="motion-puck"></div></div>
+                <span class="swatch-val">400ms</span>
+              </div>
+              <div class="motion-row motion-row--spring" title="Hover to test cubic-bezier spring">
+                <span class="motion-name">--ease-spring</span>
+                <div class="motion-track"><div class="motion-puck"></div></div>
+                <span class="swatch-val">Spring</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Token Card: Typography Scale -->
+          <article class="token-showcase-card">
+            <div class="token-showcase-card__title">
+              <h3>Fluid Typography</h3>
+              <code>clamp()</code>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <p style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); line-height: 1.2;">
+                Display Heading 2XL
+              </p>
+              <p style="font-size: var(--font-size-md); color: var(--color-text-secondary);">
+                Body copy rendered via system-ui font stack with fluid relative sizing.
+              </p>
+              <p style="font-size: var(--font-size-xs); font-family: var(--font-family-mono); color: var(--color-text-muted);">
+                font-family: Inter, ui-sans-serif, system-ui
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. ANIMATED BUTTON COLLECTION
+         ======================================================================== -->
+    <section class="section" id="buttons" aria-labelledby="buttons-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Interactive States</span>
+          <h2 class="section-title" id="buttons-title">Animated Button Collection</h2>
+          <p class="section-description">
+            Buttons engineered with CSS transitions, 2D micro-lifts on hover, tactile press-down states on <code>:active</code>, accessible keyboard outlines on <code>:focus-visible</code>, and parameterized custom properties.
+          </p>
+        </header>
+
+        <div class="token-showcase-card">
+          <div class="flex flex-wrap gap-md items-center justify-center" style="padding: var(--space-md) 0;">
+            <!-- Primary -->
+            <button type="button" class="btn btn--primary">
+              <span>Primary Button</span>
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <!-- Secondary -->
+            <button type="button" class="btn btn--secondary">
+              <span>Secondary Action</span>
+            </button>
+
+            <!-- Outline -->
+            <button type="button" class="btn btn--outline">
+              <span>Outline Ghost</span>
+            </button>
+
+            <!-- Ghost -->
+            <button type="button" class="btn btn--ghost">
+              <span>Subtle Ghost</span>
+            </button>
+
+            <!-- Success -->
+            <button type="button" class="btn btn--success">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Confirm Success</span>
+            </button>
+
+            <!-- Danger -->
+            <button type="button" class="btn btn--danger">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+              <span>Destructive Action</span>
+            </button>
+
+            <!-- Disabled -->
+            <button type="button" class="btn btn--primary" disabled aria-disabled="true">
+              <span>Disabled State</span>
+            </button>
+          </div>
+
+          <div class="ui-card__footer">
+            <span class="swatch-val">Hover: <code>transform: translateY(-2px)</code></span>
+            <span class="swatch-val">Active: <code>transform: scale(0.98)</code></span>
+            <span class="swatch-val">Focus: <code>outline: 2px solid var(--color-border-focus)</code></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. ANIMATED CARD COLLECTION
+         ======================================================================== -->
+    <section class="section" id="cards" aria-labelledby="cards-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Surface Elevation & Motion</span>
+          <h2 class="section-title" id="cards-title">Animated Card Showcase</h2>
+          <p class="section-description">
+            Six distinct card implementations demonstrating individual CSS animation techniques including translation lift, smooth scaling, subtle rotational tilt, ambient glow, flowing gradient backgrounds, and pseudo-element reveals.
+          </p>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- Card 1: Lift -->
+          <article class="ui-card card-anim-lift">
+            <div class="ui-card__header">
+              <div>
+                <h3 class="ui-card__title">01. Elevation Lift</h3>
+                <span class="ui-card__tag">translateY(-8px)</span>
+              </div>
+            </div>
+            <p class="ui-card__body">
+              Combines GPU-accelerated vertical translation with shadow ramp from <code>--shadow-sm</code> to <code>--shadow-xl</code> for tactile depth.
+            </p>
+            <div class="ui-card__footer">
+              <span class="swatch-val">Physics: Standard Ease</span>
+              <span class="badge badge--active">Hover to Lift</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Scale -->
+          <article class="ui-card card-anim-scale">
+            <div class="ui-card__header">
+              <div>
+                <h3 class="ui-card__title">02. Spring Scale</h3>
+                <span class="ui-card__tag">scale(1.03)</span>
+              </div>
+            </div>
+            <p class="ui-card__body">
+              Utilizes a calibrated cubic-bezier spring curve to expand slightly without distorting neighboring grid items.
+            </p>
+            <div class="ui-card__footer">
+              <span class="swatch-val">Timing: --ease-spring</span>
+              <span class="badge badge--active">Hover to Expand</span>
+            </div>
+          </article>
+
+          <!-- Card 3: Rotate -->
+          <article class="ui-card card-anim-rotate">
+            <div class="ui-card__header">
+              <div>
+                <h3 class="ui-card__title">03. Subtle Tilt</h3>
+                <span class="ui-card__tag">rotate(1.5deg)</span>
+              </div>
+            </div>
+            <p class="ui-card__body">
+              Applies a minute 2D angular rotation combined with vertical translation, imparting dynamic personality without dizziness.
+            </p>
+            <div class="ui-card__footer">
+              <span class="swatch-val">2D Rotation: 1.5°</span>
+              <span class="badge badge--active">Hover to Tilt</span>
+            </div>
+          </article>
+
+          <!-- Card 4: Glow -->
+          <article class="ui-card card-anim-glow">
+            <div class="ui-card__header">
+              <div>
+                <h3 class="ui-card__title">04. Ambient Glow</h3>
+                <span class="ui-card__tag">--color-primary-glow</span>
+              </div>
+            </div>
+            <p class="ui-card__body">
+              Fades in a diffused radial gradient pseudo-element on hover coupled with tokenized box-shadow glow illumination.
+            </p>
+            <div class="ui-card__footer">
+              <span class="swatch-val">Filter: Radial Blur</span>
+              <span class="badge badge--new">Glow Effect</span>
+            </div>
+          </article>
+
+          <!-- Card 5: Gradient Motion -->
+          <article class="ui-card card-anim-gradient">
+            <div class="ui-card__header">
+              <div>
+                <h3 class="ui-card__title">05. Gradient Flow</h3>
+                <span class="ui-card__tag">background-position</span>
+              </div>
+            </div>
+            <p class="ui-card__body">
+              Pans an oversized 200% linear gradient across the card surface during hover to create a liquid luminous transition.
+            </p>
+            <div class="ui-card__footer">
+              <span class="swatch-val">Transition: 600ms</span>
+              <span class="badge badge--warning">Shift Gradient</span>
+            </div>
+          </article>
+
+          <!-- Card 6: Reveal -->
+          <article class="ui-card card-anim-reveal">
+            <div class="ui-card__header">
+              <div>
+                <h3 class="ui-card__title">06. Accent Reveal</h3>
+                <span class="ui-card__tag">::after scaleX(1)</span>
+              </div>
+            </div>
+            <p class="ui-card__body">
+              Reveals an underlying accent bar anchored to the bottom alongside a sliding badge reveal using CSS pseudo-elements.
+            </p>
+            <div class="ui-card__footer">
+              <span class="swatch-val">Transform Origin: Left</span>
+              <span class="badge badge--success card-reveal-badge">Revealed Tag</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. 2D TRANSFORM PLAYGROUND
+         ======================================================================== -->
+    <section class="section" id="transforms" aria-labelledby="transforms-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">GPU-Accelerated Geometry</span>
+          <h2 class="section-title" id="transforms-title">2D Transform Playground</h2>
+          <p class="section-description">
+            Interactive visual demonstrations for essential 2D transform primitives. Hover or focus over each coordinate stage to inspect real-time geometric operations.
+          </p>
+        </header>
+
+        <div class="transform-grid">
+          <!-- Translate X -->
+          <article class="transform-card">
+            <div class="transform-stage">
+              <div class="transform-axis-x" aria-hidden="true"></div>
+              <div class="transform-axis-y" aria-hidden="true"></div>
+              <div class="transform-element demo-translate-x" tabindex="0" role="img" aria-label="Translate X demonstration element">
+                X+20
+              </div>
+            </div>
+            <div class="transform-info">
+              <h3 class="transform-title">Horizontal Translation</h3>
+              <code class="transform-code">translateX(20px)</code>
+              <p class="transform-desc">Shifts the target 20px horizontally across the X-axis without disrupting inline document flow.</p>
+            </div>
+          </article>
+
+          <!-- Translate Y -->
+          <article class="transform-card">
+            <div class="transform-stage">
+              <div class="transform-axis-x" aria-hidden="true"></div>
+              <div class="transform-axis-y" aria-hidden="true"></div>
+              <div class="transform-element demo-translate-y" tabindex="0" role="img" aria-label="Translate Y demonstration element">
+                Y-16
+              </div>
+            </div>
+            <div class="transform-info">
+              <h3 class="transform-title">Vertical Elevation</h3>
+              <code class="transform-code">translateY(-16px)</code>
+              <p class="transform-desc">Lifts the element vertically upward by 16px along the negative Y-axis with crisp hardware acceleration.</p>
+            </div>
+          </article>
+
+          <!-- Translate Both -->
+          <article class="transform-card">
+            <div class="transform-stage">
+              <div class="transform-axis-x" aria-hidden="true"></div>
+              <div class="transform-axis-y" aria-hidden="true"></div>
+              <div class="transform-element demo-translate-both" tabindex="0" role="img" aria-label="Translate 2D demonstration element">
+                2D
+              </div>
+            </div>
+            <div class="transform-info">
+              <h3 class="transform-title">2D Vector Offset</h3>
+              <code class="transform-code">translate(16px, -12px)</code>
+              <p class="transform-desc">Simultaneously shifts geometry on both planar axes using a single compact CSS declaration.</p>
+            </div>
+          </article>
+
+          <!-- Scale -->
+          <article class="transform-card">
+            <div class="transform-stage">
+              <div class="transform-axis-x" aria-hidden="true"></div>
+              <div class="transform-axis-y" aria-hidden="true"></div>
+              <div class="transform-element demo-scale" tabindex="0" role="img" aria-label="Scale demonstration element">
+                1.15×
+              </div>
+            </div>
+            <div class="transform-info">
+              <h3 class="transform-title">Proportional Scale</h3>
+              <code class="transform-code">scale(1.15)</code>
+              <p class="transform-desc">Enlarges the element by 15% from its central origin utilizing the spring easing curve token.</p>
+            </div>
+          </article>
+
+          <!-- Rotate -->
+          <article class="transform-card">
+            <div class="transform-stage">
+              <div class="transform-axis-x" aria-hidden="true"></div>
+              <div class="transform-axis-y" aria-hidden="true"></div>
+              <div class="transform-element demo-rotate" tabindex="0" role="img" aria-label="Rotate demonstration element">
+                20°
+              </div>
+            </div>
+            <div class="transform-info">
+              <h3 class="transform-title">2D Rotation</h3>
+              <code class="transform-code">rotate(20deg)</code>
+              <p class="transform-desc">Pivots the element clockwise around its center point by 20 degrees with smooth cubic-bezier easing.</p>
+            </div>
+          </article>
+
+          <!-- Skew -->
+          <article class="transform-card">
+            <div class="transform-stage">
+              <div class="transform-axis-x" aria-hidden="true"></div>
+              <div class="transform-axis-y" aria-hidden="true"></div>
+              <div class="transform-element demo-skew" tabindex="0" role="img" aria-label="Skew demonstration element">
+                Skew
+              </div>
+            </div>
+            <div class="transform-info">
+              <h3 class="transform-title">Angular Shear Distortion</h3>
+              <code class="transform-code">skew(-10deg, 4deg)</code>
+              <p class="transform-desc">Distorts the geometry along X and Y axes, creating a stylized speed slant without 3D camera projection.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         7. KEYFRAME ANIMATION GALLERY
+         ======================================================================== -->
+    <section class="section" id="keyframes" aria-labelledby="keyframes-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Reusable Motion Rules</span>
+          <h2 class="section-title" id="keyframes-title">Keyframe Animation Gallery</h2>
+          <p class="section-description">
+            Standardized <code>@keyframes</code> primitives declared in <code>animations.css</code>. Designed for reusability across loaders, banners, alerts, and state indicators.
+          </p>
+        </header>
+
+        <div class="keyframe-grid">
+          <!-- 1. Fade In -->
+          <article class="keyframe-card">
+            <div class="keyframe-stage">
+              <div class="keyframe-target target-fade">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/></svg>
+              </div>
+            </div>
+            <span class="keyframe-name">@keyframes fade-in</span>
+            <code class="keyframe-meta">opacity: 0 &rarr; 1</code>
+          </article>
+
+          <!-- 2. Slide Up -->
+          <article class="keyframe-card">
+            <div class="keyframe-stage">
+              <div class="keyframe-target target-slide-up">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+              </div>
+            </div>
+            <span class="keyframe-name">@keyframes slide-up</span>
+            <code class="keyframe-meta">translateY(24px &rarr; 0)</code>
+          </article>
+
+          <!-- 3. Slide In -->
+          <article class="keyframe-card">
+            <div class="keyframe-stage">
+              <div class="keyframe-target target-slide-in">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+            <span class="keyframe-name">@keyframes slide-in</span>
+            <code class="keyframe-meta">translateX(-24px &rarr; 0)</code>
+          </article>
+
+          <!-- 4. Pulse -->
+          <article class="keyframe-card">
+            <div class="keyframe-stage">
+              <div class="keyframe-target target-pulse">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+            </div>
+            <span class="keyframe-name">@keyframes pulse</span>
+            <code class="keyframe-meta">scale(1 &rarr; 1.08 &rarr; 1)</code>
+          </article>
+
+          <!-- 5. Float -->
+          <article class="keyframe-card">
+            <div class="keyframe-stage">
+              <div class="keyframe-target target-float">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/></svg>
+              </div>
+            </div>
+            <span class="keyframe-name">@keyframes float</span>
+            <code class="keyframe-meta">translateY(0 &rarr; -12px)</code>
+          </article>
+
+          <!-- 6. Shimmer -->
+          <article class="keyframe-card">
+            <div class="keyframe-stage">
+              <div class="target-shimmer"></div>
+            </div>
+            <span class="keyframe-name">@keyframes shimmer</span>
+            <code class="keyframe-meta">background-position</code>
+          </article>
+
+          <!-- 7. Spin -->
+          <article class="keyframe-card">
+            <div class="keyframe-stage">
+              <div class="keyframe-target target-spin">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+              </div>
+            </div>
+            <span class="keyframe-name">@keyframes spin</span>
+            <code class="keyframe-meta">rotate(0 &rarr; 360deg)</code>
+          </article>
+
+          <!-- 8. Bounce -->
+          <article class="keyframe-card">
+            <div class="keyframe-stage">
+              <div class="keyframe-target target-bounce">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+            <span class="keyframe-name">@keyframes bounce</span>
+            <code class="keyframe-meta">translateY(0 &rarr; -14px)</code>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         8. REUSABLE ANIMATED UI COMPONENTS
+         ======================================================================== -->
+    <section class="section" id="components" aria-labelledby="components-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Component Suite</span>
+          <h2 class="section-title" id="components-title">Animated UI Components</h2>
+          <p class="section-description">
+            Production components configured with micro-animations and status cues: status badges, toast notifications, loader patterns, and live beacon indicators.
+          </p>
+        </header>
+
+        <div class="components-matrix">
+          <!-- 1. Badges & Tags -->
+          <article class="comp-group">
+            <div class="comp-group__title">
+              <h3>Animated Badges</h3>
+              <code>.badge--*</code>
+            </div>
+            <p class="ui-card__body">Micro status tags featuring pulsing beacons and hover lift feedback.</p>
+            <div class="badge-row">
+              <span class="badge badge--new"><span class="badge-dot" aria-hidden="true"></span>New Release</span>
+              <span class="badge badge--active"><span class="badge-dot" aria-hidden="true"></span>Active Worker</span>
+              <span class="badge badge--success"><span class="badge-dot" aria-hidden="true"></span>Deployed</span>
+              <span class="badge badge--warning"><span class="badge-dot" aria-hidden="true"></span>Pending Audit</span>
+            </div>
+          </article>
+
+          <!-- 2. Loading Indicators -->
+          <article class="comp-group">
+            <div class="comp-group__title">
+              <h3>Loading Components</h3>
+              <code>CSS Loaders</code>
+            </div>
+            <div class="loaders-row">
+              <div class="loader-box">
+                <div class="spinner" role="progressbar" aria-label="Loading spinner"></div>
+                <span class="loader-label">Dual-Ring Spin</span>
+              </div>
+              <div class="loader-box">
+                <div class="pulse-dots" aria-label="Pulsing dots loader">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="loader-label">Staggered Dots</span>
+              </div>
+              <div class="loader-box" style="grid-column: 1 / -1;">
+                <div class="skeleton-card" aria-label="Skeleton placeholder loading card">
+                  <div class="skeleton-line skeleton-line--short"></div>
+                  <div class="skeleton-line skeleton-line--long"></div>
+                </div>
+                <span class="loader-label">Skeleton Shimmer</span>
+              </div>
+              <div class="loader-box" style="grid-column: 1 / -1;">
+                <div class="progress-bar-container" role="progressbar" aria-label="Indeterminate progress bar">
+                  <div class="progress-bar-indeterminate"></div>
+                </div>
+                <span class="loader-label">Indeterminate Progress</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Notification Toasts -->
+          <article class="comp-group">
+            <div class="comp-group__title">
+              <h3>Toast Notifications</h3>
+              <code>.toast--*</code>
+            </div>
+            <div class="toast-stack">
+              <div class="toast toast--success" role="status">
+                <span class="toast-icon">✓</span>
+                <div class="toast-content">
+                  <div class="toast-title">Deployment Succeeded</div>
+                  <div class="toast-message">Static assets uploaded to CDN in 240ms.</div>
+                </div>
+              </div>
+              <div class="toast toast--warning" role="alert">
+                <span class="toast-icon">⚠</span>
+                <div class="toast-content">
+                  <div class="toast-title">Cache Size Warning</div>
+                  <div class="toast-message">Local storage utilization reached 84%.</div>
+                </div>
+              </div>
+              <div class="toast toast--danger" role="alert">
+                <span class="toast-icon">✕</span>
+                <div class="toast-content">
+                  <div class="toast-title">Sync Error</div>
+                  <div class="toast-message">Upstream API responded with code 503.</div>
+                </div>
+              </div>
+              <div class="toast toast--info" role="status">
+                <span class="toast-icon">ℹ</span>
+                <div class="toast-content">
+                  <div class="toast-title">Token Synchronized</div>
+                  <div class="toast-message">Theme variables re-computed across elements.</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Status Indicators -->
+          <article class="comp-group">
+            <div class="comp-group__title">
+              <h3>Live Status Indicators</h3>
+              <code>.status-beacon</code>
+            </div>
+            <p class="ui-card__body">Telemetry beacons displaying pulse rings, rotating states, and steady markers.</p>
+            <div class="status-grid">
+              <div class="status-card">
+                <span class="status-beacon status-beacon--online" aria-hidden="true"></span>
+                <div class="status-meta">
+                  <span class="status-name">Node Worker 01</span>
+                  <span class="status-state">Online (Pinging)</span>
+                </div>
+              </div>
+              <div class="status-card">
+                <span class="status-beacon status-beacon--processing" aria-hidden="true"></span>
+                <div class="status-meta">
+                  <span class="status-name">CSS Optimizer</span>
+                  <span class="status-state">Processing...</span>
+                </div>
+              </div>
+              <div class="status-card">
+                <span class="status-beacon status-beacon--completed" aria-hidden="true"></span>
+                <div class="status-meta">
+                  <span class="status-name">Cache Hydrate</span>
+                  <span class="status-state">Completed</span>
+                </div>
+              </div>
+              <div class="status-card">
+                <span class="status-beacon status-beacon--offline" aria-hidden="true"></span>
+                <div class="status-meta">
+                  <span class="status-name">Legacy Driver</span>
+                  <span class="status-state">Offline</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         9. INTERACTIVE THEME PREVIEW STUDIO (PURE CSS3)
+         ======================================================================== -->
+    <section class="section" id="themes" aria-labelledby="themes-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Zero-JS Runtime Customization</span>
+          <h2 class="section-title" id="themes-title">Interactive Theme Studio</h2>
+          <p class="section-description">
+            Demonstrating how CSS custom properties control an entire visual system. Selecting a theme below overrides root tokens locally using pure CSS sibling selectors without a single line of JavaScript.
+          </p>
+        </header>
+
+        <!-- Pure CSS Radio Controller -->
+        <input type="radio" name="theme-switch" id="theme-default" class="theme-radio" checked>
+        <input type="radio" name="theme-switch" id="theme-emerald" class="theme-radio">
+        <input type="radio" name="theme-switch" id="theme-cyber" class="theme-radio">
+        <input type="radio" name="theme-switch" id="theme-sunset" class="theme-radio">
+
+        <div class="theme-switcher-controls" role="radiogroup" aria-label="Color Theme Switcher">
+          <label for="theme-default" class="theme-pill-label">
+            <span class="theme-pill-dot dot-default" aria-hidden="true"></span>
+            <span>Cyber Indigo (Default)</span>
+          </label>
+          <label for="theme-emerald" class="theme-pill-label">
+            <span class="theme-pill-dot dot-emerald" aria-hidden="true"></span>
+            <span>Emerald Forest</span>
+          </label>
+          <label for="theme-cyber" class="theme-pill-label">
+            <span class="theme-pill-dot dot-cyber" aria-hidden="true"></span>
+            <span>Neon Cyberpunk</span>
+          </label>
+          <label for="theme-sunset" class="theme-pill-label">
+            <span class="theme-pill-dot dot-sunset" aria-hidden="true"></span>
+            <span>Sunset Amber</span>
+          </label>
+        </div>
+
+        <!-- Dynamic Preview Stage -->
+        <div class="theme-preview-stage" aria-live="polite">
+          <div class="grid grid-2" style="align-items: center; gap: var(--space-xl);">
+            <div>
+              <span class="badge badge--new" style="margin-bottom: var(--space-sm);">
+                <span class="badge-dot" aria-hidden="true"></span>
+                <span>Live CSS Token Scope</span>
+              </span>
+              <h3 style="font-size: var(--font-size-2xl); margin-bottom: var(--space-xs);">
+                Real-Time CSS Variable Inheritance
+              </h3>
+              <p style="margin-bottom: var(--space-md); color: var(--color-text-secondary);">
+                When you click a theme pill above, CSS variable overrides for <code>--color-primary</code>, <code>--color-surface-card</code>, <code>--color-border</code>, and <code>--color-primary-glow</code> are applied directly to this container scope.
+              </p>
+              <div class="flex flex-wrap gap-sm">
+                <button type="button" class="btn btn--primary">
+                  <span>Primary Token</span>
+                </button>
+                <button type="button" class="btn btn--outline">
+                  <span>Accent Outline</span>
+                </button>
+                <button type="button" class="btn btn--secondary">
+                  <span>Surface Elevate</span>
+                </button>
+              </div>
+            </div>
+
+            <article class="ui-card card-anim-glow" style="margin: 0;">
+              <div class="ui-card__header">
+                <div>
+                  <h4 class="ui-card__title">Scoped Component Sandbox</h4>
+                  <span class="ui-card__tag">var(--color-primary)</span>
+                </div>
+                <span class="status-beacon status-beacon--online" title="Theme live" aria-hidden="true"></span>
+              </div>
+              <p class="ui-card__body" style="margin-bottom: var(--space-sm);">
+                All buttons, badges, glows, and borders in this card inherit the active theme palette automatically. Notice the ambient glow matches the selected accent!
+              </p>
+              <div class="toast toast--info" style="margin-top: var(--space-sm);">
+                <span class="toast-icon">✦</span>
+                <div class="toast-content">
+                  <div class="toast-title">Dynamic CSS Inheritance</div>
+                  <div class="toast-message">Controlled purely with <code>:checked ~ .theme-preview-stage</code></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       10. FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/images/logo.svg" alt="Animated UI Theme Pack" width="28" height="28">
+          <span>Animated UI Theme Pack</span>
+        </div>
+
+        <div class="footer-tech-stack">
+          <span class="tech-tag">HTML5 Semantic</span>
+          <span class="tech-tag">Modern CSS3</span>
+          <span class="tech-tag">CSS Custom Properties</span>
+          <span class="tech-tag">2D Transforms</span>
+          <span class="tech-tag">@keyframes</span>
+          <span class="tech-tag">Zero JavaScript</span>
+          <span class="tech-tag">WCAG AA Compliant</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex justify-between items-center flex-wrap gap-sm">
+        <p class="footer-meta">
+          &copy; 2026 Animated UI Theme Pack. Engineered for performance, accessibility, and modern design systems.
+        </p>
+        <a href="#top" class="btn btn--ghost" style="padding: var(--space-xs) var(--space-sm); font-size: var(--font-size-xs);">
+          <span>Back to Top &uarr;</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

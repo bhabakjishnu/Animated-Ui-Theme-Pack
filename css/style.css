@@ -1,0 +1,19 @@
+/* ==========================================================================
+   ANIMATED UI THEME PACK - MAIN STYLESHEET BUNDLE
+   Pure CSS3 Architecture | Zero Frameworks | Zero JavaScript
+   ========================================================================== */
+
+/* 1. Design Tokens & CSS Custom Properties */
+@import 'variables.css';
+
+/* 2. Base Reset, Typography & Layout Utilities */
+@import 'base.css';
+
+/* 3. Reusable Keyframe Animations & 2D Transforms */
+@import 'animations.css';
+
+/* 4. Core UI Components & Interactive Patterns */
+@import 'components.css';
+
+/* 5. Responsive Layouts & Accessibility (Reduced Motion) */
+@import 'responsive.css';

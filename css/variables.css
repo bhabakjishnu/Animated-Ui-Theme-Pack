@@ -1,0 +1,221 @@
+/* ==========================================================================
+   DESIGN TOKENS & CSS CUSTOM PROPERTIES
+   Animated UI Theme Pack - Core Variable System
+   ========================================================================== */
+
+:root {
+  /* -------------------------------------------------------------------------
+     Colors: Primary & Accents (Default: Cyber Indigo)
+     ------------------------------------------------------------------------- */
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-primary-active: #4338ca;
+  --color-primary-subtle: rgba(99, 102, 241, 0.12);
+  --color-primary-glow: rgba(99, 102, 241, 0.35);
+
+  --color-secondary: #06b6d4;
+  --color-secondary-hover: #0891b2;
+  --color-secondary-active: #0e7490;
+  --color-secondary-subtle: rgba(6, 182, 212, 0.12);
+  --color-secondary-glow: rgba(6, 182, 212, 0.3);
+
+  --color-accent-purple: #a855f7;
+  --color-accent-pink: #ec4899;
+
+  /* -------------------------------------------------------------------------
+     Colors: Background, Surface & Canvas Tiers
+     ------------------------------------------------------------------------- */
+  --color-background: #090d16;
+  --color-surface: #0f172a;
+  --color-surface-card: #131c31;
+  --color-surface-hover: #18233c;
+  --color-surface-elevated: #1e293b;
+  --color-surface-overlay: rgba(15, 23, 42, 0.85);
+
+  /* -------------------------------------------------------------------------
+     Colors: Typography & Contrast Tiers
+     ------------------------------------------------------------------------- */
+  --color-text: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #020617;
+
+  /* -------------------------------------------------------------------------
+     Colors: Structural Borders & Outlines
+     ------------------------------------------------------------------------- */
+  --color-border: #1e293b;
+  --color-border-subtle: rgba(255, 255, 255, 0.07);
+  --color-border-hover: #334155;
+  --color-border-focus: #818cf8;
+
+  /* -------------------------------------------------------------------------
+     Colors: Functional / Semantic Status
+     ------------------------------------------------------------------------- */
+  --color-success: #10b981;
+  --color-success-hover: #059669;
+  --color-success-subtle: rgba(16, 185, 129, 0.12);
+  --color-success-glow: rgba(16, 185, 129, 0.28);
+
+  --color-warning: #f59e0b;
+  --color-warning-hover: #d97706;
+  --color-warning-subtle: rgba(245, 158, 11, 0.12);
+  --color-warning-glow: rgba(245, 158, 11, 0.28);
+
+  --color-danger: #f43f5e;
+  --color-danger-hover: #e11d48;
+  --color-danger-subtle: rgba(244, 63, 94, 0.12);
+  --color-danger-glow: rgba(244, 63, 94, 0.28);
+
+  --color-info: #38bdf8;
+  --color-info-hover: #0284c7;
+  --color-info-subtle: rgba(56, 189, 248, 0.12);
+  --color-info-glow: rgba(56, 189, 248, 0.28);
+
+  /* -------------------------------------------------------------------------
+     Typography Tokens
+     ------------------------------------------------------------------------- */
+  --font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --font-size-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.75rem);
+  --font-size-sm: clamp(0.8rem, 0.76rem + 0.2vw, 0.875rem);
+  --font-size-md: clamp(0.95rem, 0.91rem + 0.2vw, 1rem);
+  --font-size-lg: clamp(1.05rem, 1rem + 0.35vw, 1.125rem);
+  --font-size-xl: clamp(1.15rem, 1.05rem + 0.4vw, 1.3rem);
+  --font-size-2xl: clamp(1.35rem, 1.2rem + 0.6vw, 1.65rem);
+  --font-size-3xl: clamp(1.5rem, 1.3rem + 1vw, 2.15rem);
+  --font-size-display: clamp(1.85rem, 1.4rem + 2vw, 3.5rem);
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.15;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* -------------------------------------------------------------------------
+     Spacing Tokens
+     ------------------------------------------------------------------------- */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4.5rem;   /* 72px */
+
+  /* -------------------------------------------------------------------------
+     Border Radius Tokens
+     ------------------------------------------------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+  --radius-circle: 50%;
+
+  /* -------------------------------------------------------------------------
+     Elevation & Shadow Tokens
+     ------------------------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.5), 0 2px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 28px -4px rgba(0, 0, 0, 0.6), 0 4px 12px -2px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 24px 48px -12px rgba(0, 0, 0, 0.75);
+  --shadow-glow: 0 0 20px -2px var(--color-primary-glow);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+
+  /* -------------------------------------------------------------------------
+     Motion & Transition Timing Tokens
+     ------------------------------------------------------------------------- */
+  --transition-fast: 150ms;
+  --transition-normal: 250ms;
+  --transition-slow: 400ms;
+  --transition-relaxed: 600ms;
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Layout maximum constraints */
+  --container-max-width: 1200px;
+  --header-height: 72px;
+}
+
+/* ==========================================================================
+   THEME PALETTE OVERRIDES (Demonstrating Central Token Control)
+   ========================================================================== */
+
+/* Emerald Forest Theme */
+.theme-emerald {
+  --color-primary: #10b981;
+  --color-primary-hover: #059669;
+  --color-primary-active: #047857;
+  --color-primary-subtle: rgba(16, 185, 129, 0.14);
+  --color-primary-glow: rgba(16, 185, 129, 0.4);
+  --color-secondary: #06b6d4;
+  --color-secondary-hover: #0891b2;
+  --color-secondary-subtle: rgba(6, 182, 212, 0.14);
+  --color-surface-card: #0b1f1a;
+  --color-surface-hover: #102a24;
+  --color-border: #133a30;
+  --color-border-hover: #1e5a4a;
+  --color-border-focus: #34d399;
+}
+
+/* Cyber Violet Theme */
+.theme-cyber {
+  --color-primary: #d946ef;
+  --color-primary-hover: #c026d3;
+  --color-primary-active: #a21caf;
+  --color-primary-subtle: rgba(217, 70, 239, 0.14);
+  --color-primary-glow: rgba(217, 70, 239, 0.4);
+  --color-secondary: #38bdf8;
+  --color-secondary-hover: #0284c7;
+  --color-secondary-subtle: rgba(56, 189, 248, 0.14);
+  --color-surface-card: #1c102a;
+  --color-surface-hover: #26163b;
+  --color-border: #331d4e;
+  --color-border-hover: #4e2978;
+  --color-border-focus: #e879f9;
+}
+
+/* Sunset Amber Theme */
+.theme-sunset {
+  --color-primary: #f97316;
+  --color-primary-hover: #ea580c;
+  --color-primary-active: #c2410c;
+  --color-primary-subtle: rgba(249, 115, 22, 0.14);
+  --color-primary-glow: rgba(249, 115, 22, 0.4);
+  --color-secondary: #e11d48;
+  --color-secondary-hover: #be123c;
+  --color-secondary-subtle: rgba(225, 29, 72, 0.14);
+  --color-surface-card: #20130d;
+  --color-surface-hover: #2e1a11;
+  --color-border: #3f2214;
+  --color-border-hover: #5d311c;
+  --color-border-focus: #fb923c;
+}
+
+/* Midnight Ocean Theme */
+.theme-midnight {
+  --color-primary: #38bdf8;
+  --color-primary-hover: #0284c7;
+  --color-primary-active: #0369a1;
+  --color-primary-subtle: rgba(56, 189, 248, 0.14);
+  --color-primary-glow: rgba(56, 189, 248, 0.4);
+  --color-secondary: #818cf8;
+  --color-secondary-hover: #6366f1;
+  --color-secondary-subtle: rgba(129, 140, 248, 0.14);
+  --color-surface-card: #0c1a2d;
+  --color-surface-hover: #12243d;
+  --color-border: #1a3354;
+  --color-border-hover: #254a7c;
+  --color-border-focus: #7dd3fc;
+}
