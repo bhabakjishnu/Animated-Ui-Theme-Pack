@@ -11,6 +11,12 @@ A modular, high-performance UI component library and motion design system built 
 
 ---
 
+<p align="center">
+  <img src="assets/images/desktop-preview.png" alt="Animated UI Theme Pack Desktop Preview" width="100%">
+</p>
+
+---
+
 ## Features
 
 - **Centralized Design Token Architecture**: Declarative `:root` tokens for color palettes, spacing scales, border radii, elevation shadows, and cubic-bezier easing curves.
@@ -151,7 +157,8 @@ Animated-Ui-Theme-Pack/
 ├── index.html               # Semantic HTML5 component showcase and dashboard
 ├── assets/
 │   └── images/
-│       └── logo.svg         # Scalable vector brand emblem
+│       ├── desktop-preview.png  # High-resolution desktop showcase preview
+│       └── logo.svg             # Scalable vector brand emblem
 └── css/
     ├── animations.css       # Core @keyframes definitions and 2D transform utility classes
     ├── base.css             # CSS reset, typography defaults, layout containers, and focus rings
