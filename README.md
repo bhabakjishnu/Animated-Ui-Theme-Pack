@@ -1,5 +1,12 @@
 # Animated UI Theme Pack
 
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![Zero JavaScript](https://img.shields.io/badge/JavaScript-Zero_Runtime-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](#tech-stack)
+[![WCAG 2.1 AA](https://img.shields.io/badge/Accessibility-WCAG_2.1_AA-6366F1?style=for-the-badge&logo=w3c&logoColor=white)](#testing)
+[![Responsive](https://img.shields.io/badge/Responsive-Mobile_to_4K-10B981?style=for-the-badge)](#features)
+[![License: MIT](https://img.shields.io/badge/License-MIT-06B6D4?style=for-the-badge)](LICENSE)
+
 A modular, high-performance UI component library and motion design system built with semantic HTML5 and modern CSS3. Demonstrates centralized CSS Custom Properties (`var(--token)`), hardware-accelerated 2D geometric transformations (`translate`, `scale`, `rotate`, `skew`), reusable `@keyframes` animations, and a zero-JavaScript interactive theme-switching mechanism. Engineered for accessibility with WCAG-compliant focus rings and OS-level `prefers-reduced-motion` handling.
 
 ---
@@ -76,6 +83,61 @@ flowchart TD
 4. **Component Composition (`css/components.css`)**: Assembles tokens and animations into cohesive UI patterns including the site header, hero presentation, interactive buttons, animated cards, coordinate stages, loaders, status beacons, and toast alerts.
 5. **Responsive & Accessibility Overrides (`css/responsive.css`)**: Implements mobile-first layout rules from 320px up to 1440px+ and defines strict animation dampening under `@media (prefers-reduced-motion: reduce)`.
 6. **Master Aggregator (`css/style.css`)**: Aggregates all modular layers in cascade order via `@import`.
+
+### Pipeline Architecture
+
+The execution and rendering lifecycle operates through a deterministic 5-stage pipeline, processing native assets from initial ingestion to GPU-accelerated display without intermediate runtime JavaScript:
+
+```mermaid
+flowchart LR
+    subgraph P1 ["1. Asset Ingestion Pipeline"]
+        direction TB
+        A1["index.html"] --> A2["Modular CSS Loader"]
+        A2 --> A3["variables.css"]
+        A2 --> A4["base.css"]
+        A2 --> A5["animations.css"]
+        A2 --> A6["components.css"]
+        A2 --> A7["responsive.css"]
+    end
+
+    subgraph P2 ["2. Token Cascade & Scoping"]
+        direction TB
+        B1[":root Token Registry"] --> B2["CSS Custom Properties Tree"]
+        B2 --> B3["Inheritance Engine"]
+        B3 --> B4["Dynamic Theme Overrides\n(.theme-* Scopes)"]
+    end
+
+    subgraph P3 ["3. Layout & Paint Engine"]
+        direction TB
+        C1["DOM Tree + CSSOM"] --> C2["Fluid Scales & Grid Resolution\n(clamp & auto-fit)"]
+        C2 --> C3["Rasterization & Initial Paint"]
+    end
+
+    subgraph P4 ["4. Pure-CSS State Pipeline"]
+        direction TB
+        D1["User Event (:checked)"] --> D2["Sibling Combinator (~)\nSelector Match"]
+        D2 --> D3["Local Scope Token Mutation\n(.theme-preview-stage)"]
+    end
+
+    subgraph P5 ["5. GPU Motion & Safety Gate"]
+        direction TB
+        E1["Interactive Trigger (:hover / :active)"] --> E2{"Motion Preference Check"}
+        E2 -- "Standard Motion" --> E3["GPU Composite Layer Promotion\n(transform / opacity)"]
+        E2 -- "Reduced Motion" --> E4["prefers-reduced-motion Override\n(Clamp Duration to 0.01ms)"]
+    end
+
+    P1 ==> P2 ==> P3 ==> P4 ==> P5
+```
+
+#### Pipeline Stages Detailed Breakdown
+
+| Stage | Pipeline Phase | Trigger / Source | Mechanism / Implementation | Output / Resolution |
+| :---: | :--- | :--- | :--- | :--- |
+| **01** | **Asset Ingestion Pipeline** | Browser HTTP Request | Sequential `<link>` imports in [index.html](file:///c:/Users/jishn/Desktop/Animated-Ui-Theme-Pack/index.html#L12-L16) | Predictable CSS cascade order without bundle latency |
+| **02** | **Token Cascade & Scoping** | `:root` Evaluation | CSS Custom Properties declared in [variables.css](file:///c:/Users/jishn/Desktop/Animated-Ui-Theme-Pack/css/variables.css#L6-L149) | Centralized design tokens inherited across all components |
+| **03** | **Layout & Paint Engine** | DOM + CSSOM Binding | Fluid math (`clamp()`), CSS Grid `auto-fit`, and SVG rendering | Responsive, vector-crisp UI rendered from 320px to 4K |
+| **04** | **Pure-CSS State Pipeline** | Theme Pill Selection | Radio inputs + sibling combinators (`:checked ~ .theme-preview-stage`) | Instantaneous palette re-theming with zero JS overhead |
+| **05** | **GPU Motion & Safety Gate** | User Interaction / OS Flag | Composite-only properties (`transform`, `opacity`) + `prefers-reduced-motion` | 60fps tactile feedback with automated vestibular safety |
 
 ---
 
