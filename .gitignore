@@ -12,3 +12,11 @@ desktop.ini
 # Temporary Artifacts
 *.log
 .cache/
+
+# Environment Variables & Secrets (Defense-in-Depth)
+.env
+.env.*
+*.env
+*.pem
+*.key
+
