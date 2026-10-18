@@ -12,7 +12,7 @@ A modular, high-performance UI component library and motion design system built 
 ---
 
 <p align="center">
-  <img src="assets/images/desktop-preview.png" alt="Animated UI Theme Pack Desktop Preview" width="100%">
+  <img src="./assets/desktop-preview.png" alt="Desktop Preview" width="100%">
 </p>
 
 ---
@@ -156,6 +156,7 @@ Animated-Ui-Theme-Pack/
 ├── README.md                # Technical documentation and architectural reference
 ├── index.html               # Semantic HTML5 component showcase and dashboard
 ├── assets/
+│   ├── desktop-preview.png      # High-resolution Full HD desktop showcase preview
 │   └── images/
 │       ├── desktop-preview.png  # High-resolution desktop showcase preview
 │       └── logo.svg             # Scalable vector brand emblem
