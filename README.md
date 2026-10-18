@@ -171,6 +171,42 @@ Animated-Ui-Theme-Pack/
 
 ---
 
+## Visual Project Structure
+
+A visual hierarchy diagram illustrating directory organization, static assets, and modular stylesheet architecture:
+
+```mermaid
+flowchart TD
+    Root["Animated-Ui-Theme-Pack/"]
+
+    %% Primary Branches
+    Root --> Config["Root Files & Configuration"]
+    Root --> Assets["assets/"]
+    Root --> Styles["css/"]
+
+    %% Root Configuration & Entry
+    Config --> Gitignore[".gitignore\n(Excludes OS artifacts & secrets)"]
+    Config --> License["LICENSE\n(MIT License terms)"]
+    Config --> Readme["README.md\n(Technical documentation)"]
+    Config --> Index["index.html\n(Showcase dashboard & UI matrix)"]
+
+    %% Assets Folder
+    Assets --> DesktopPreview["desktop-preview.png\n(Showcase preview)"]
+    Assets --> ImagesDir["images/"]
+    ImagesDir --> ImgPreview["desktop-preview.png\n(Display graphic)"]
+    ImagesDir --> LogoSvg["logo.svg\n(Scalable vector brand emblem)"]
+
+    %% CSS Architecture
+    Styles --> StyleCss["style.css\n(Master aggregator stylesheet)"]
+    Styles --> VarCss["variables.css\n(Design tokens & theme definitions)"]
+    Styles --> BaseCss["base.css\n(CSS reset, typography & layout)"]
+    Styles --> AnimCss["animations.css\n(@keyframes & 2D transform utilities)"]
+    Styles --> CompCss["components.css\n(Buttons, cards, loaders & toasts)"]
+    Styles --> RespCss["responsive.css\n(Breakpoints & prefers-reduced-motion)"]
+```
+
+---
+
 ## Project Analysis
 
 ### Architecture Summary
